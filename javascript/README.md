@@ -142,4 +142,32 @@ function name( [arg...[,arg]]){
 }
 
 ```
+	1. re-usability
+	2. maintenance
+	3. readability
+
+
+* input : arg inside ( )
+```javascript
+function get_argument(arg1, arg2){
+	return arg1 + arg2;
+} // can have multiple parameters(args) but can only return one output
+
+alert(get_argument(1, 2));
+```
+
+* Multiple ways to declare function <br>
+below is same as above
+```javascript
+	get_argument = function(arg1, arg2){
+		return arg1 + arg2;
+	}
+```
+
+* Anonymous function: used for one time use: Using it as it declares the function
+```javascript
+(function (){
+	return 1;
+})();
+```
 
