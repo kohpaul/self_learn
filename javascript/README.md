@@ -213,3 +213,61 @@ alert(li); // a,b,c,d,e
 li.reverse();
 alert(li); // e,d,c,b,a
 ```
+
+* Object: index can be any datatype that we define
+```javascript
+// 3 ways to declare Object
+var grades = {'qwe':10, 'asd':40, 'zxc':90}; // define with { }. ' ' called key, things after colon called value
+grades // Object {qwe:10, asd:40, zxc:90}
+
+var tier = {};
+tier['asd'] = 10;
+tier['qwe'] = 20;
+tier['zxc'] = 'vbn';
+
+var temp = new Object();
+temp['q'] = 'w';
+temp['a'] = 1;
+```
+
+```javascript
+
+// 2 ways to access value
+grades['qwe'] // 10 : key string adjustable: grades['qw'+'e'] 
+grades.qwe // 10 : simple
+
+```
+
+* Object with loop
+```javascript
+var grades = {'asd': 1, 'qwe': 2, 'zxc': 3};
+for(key in grades) {
+    document.write("key : "+key+" value : "+grades[key]+"<br />");
+} // 1,2,3
+
+// for-in can be used in array too
+var arr = ['a', 'b', 'c'];
+for (var name in arr){
+	console.log(name);
+	console.log(arr[name]);
+} 
+```
+
+* Object-Oriented Programming (OOP)
+```javascript
+// object saved as variable grades have keys 'list' and 'show' with values of object and function
+
+var grades = { 
+    'list': {'qwe': 1, 'asd': 3, 'zxc': 5},
+    'show' : function(){
+        for(var name in this.list){
+            document.write(name+':'+this.list[name]+"<br />");
+        }
+    }
+};
+// variable "this" indicate object that owns this function
+alert(grades['list']['asd']); // 1
+alert(grades['show']()); // run function inside of it
+grades.show();
+
+```
