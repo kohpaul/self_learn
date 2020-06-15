@@ -171,3 +171,45 @@ below is same as above
 })();
 ```
 
+* Array: allow return multiple elements
+```javascript
+var arr = ['asd', 'zxc', 'qwe'];
+alert(arr); // add,xxc,qwe
+alert(arr[0]); // asd
+alert(arr.length); // 3
+alert(arr[1].toUpperCase()); // ZXC
+```
+
+```javascript
+var li = ['a', 'b', 'c', 'd', 'e'];
+li // ['a', 'b', 'c', 'd', 'e'] 
+li.push('f'); // ['a', 'b', 'c', 'd', 'e', 'f'] : add one element in tail
+li.push('f', 'g'); //  ['a', 'b', 'c', 'd', 'e', 'f', 'f', 'g'] : add mult elements in tail
+li.concat(['g', 'h']); // ['a', 'b', 'c', 'd', 'e', 'f', 'f', 'g', 'h'] : add mult elements in tail
+li.unshift('y', 'z'); // ['y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'f', 'g', 'h'] : add one or more elements in head
+```
+
+* splice(ind, count, elm1, ... , elmN) : add in middle
+ind: staring index
+count: 0 === before ind, 1 === delete 1 elem in index and insert elements AND RETURN deleted value
+```javascript
+var a = ['a', 'b', 'c'];
+a.splice(1, 1, 'x', 'y'); // ['a', 'x', 'y', 'c'] --> return b
+```
+
+* delete element
+```javascript
+li = ['a', 'b', 'c'];
+li.shift(); // ['b', 'c'] : delete head and return
+li.pop(); // ['b'] : delete tail and return
+```
+
+* sort elements
+```javascript
+var li = ['c', 'e', 'a', 'b', 'd'];
+li.sort();
+alert(li); // a,b,c,d,e
+
+li.reverse();
+alert(li); // e,d,c,b,a
+```
