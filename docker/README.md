@@ -1,38 +1,75 @@
-Docker setup in Mac
-// install docker in mac
-download Docker Desktop for Mac
-double click icon and drag into Application
+# Docker setup in Mac
+* Install docker in mac <br>
+*맥에 도커 설치 하기*
 
-// version check
+    1. Download Docker Desktop for Mac from https://hub.docker.com/editions/community/docker-ce-desktop-mac <br>
+    *도커 홈페이지에서 도커 데스크탑 다운로드*
+
+    2. Double click icon and drag into Application <br>
+    *더블클릭으로 설치*
+
+* Docker version check <br>
+*도커 버전 확인*
+```bash
 $ docker version
+```
 
-// Docker ubuntu 20.04 LTS image install
+* Docker ubuntu 20.04 LTS image install <br>
+*도커에 우분투 20.04 이미지 인스톨*
+```bash
 $ docker run  -d -t --name ubuntu ubuntu:20.04
+```
 
-// Run contatiner (want exit? —> $ exit)
+* Run contatiner (want exit? —> $ exit) <br>
+*컨테이너 시작*
+```bash
 $ docker exec -it ubuntu bash
+```
 
-// version check 
+* Version check <br>
+*컨테이너 버전 확인*
+```bash
 $ cat /etc/os-release
+```
 
-// check running container
+* Check running container <br>
+*실행중인 컨테이너 확인*
+```bash
 $ docker ps
+```
 
-// stop container
+* Stop container <br>
+*컨테이너 스톱*
+```bash
 $ docker stop [container_id]
+```
 
-// check stopped container / checking deleted container
+* Check stopped container / checking deleted container <br>
+*멈췄거나 삭제된 컨테이너 확인*
+```bash
 $ docker ps -a
+```
 
-// delete container
+* Delete container <br>
+*컨테이너 삭제*
+```bash
 $ docker rm [container_id1] [container_id2]
+```
 
-// currently installed images check
+* Currently installed images check <br>
+*현재 설치된 이미지 확인*
+```bash
 $ docker images
+```
 
-// delete image
+* Delete image <br>
+*이미지 삭제*
+```bash
 $ docker rmi [img_id]
+```
 
-// delete container b4 deleting image
+* Delete container b4 deleting image <br>
+*컨테이너 지우고 이미지 삭제*
+```bash
 $ docker rmi -f [img_id]
-
+```

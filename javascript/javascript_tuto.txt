@@ -1,5 +1,6 @@
-Javascript
+# Javascript
 
+```javascript
 // numbers auto cast
 alert(1+1.0);	// 2
 alert(Math.pow(3,2));	// 9
@@ -9,6 +10,7 @@ alert(typeof 1);	// number
 alert(‘shaun\’s javascript’);	// shaun’s javascript
 alert("coding"+" everybody");	// coding everybody
 alert("coding everybody".length);	// 16
+```
 
 //declaration
 var a = 1; var b;
