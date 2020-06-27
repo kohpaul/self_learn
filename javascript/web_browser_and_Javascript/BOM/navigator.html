@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="alert" onclick="fnc_prompt()"/>
+	<script>
+		/* cross browsing: ie, ff, chrome, safari, ..etc 
+			Each browser platform make browser according to spec defined by w3c, ECM 
+			Navigator allow coding for each browser compatibility: provide browser info
+
+		*/
+		console.dir(navigator);
+		console.dir(navigator.appName); // appName: browser name
+		console.dir(navigator.appVersion); // browser version
+		console.dir(navigator.userAgent); // USER-AGENT HTTP header info that browser sends to server
+		console.dir(navigator.platform); // os that browser is on
+
+		// Function test: need for cross browsing issue
+		// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+		if (!Object.keys) { // Object.keys method return key values in array added by ECMAScript5 ( old js is not compatible)
+		  Object.keys = (function () {
+			'use strict';
+			var hasOwnProperty = Object.prototype.hasOwnProperty,
+				hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+				dontEnums = [
+				  'toString',
+				  'toLocaleString',
+				  'valueOf',
+				  'hasOwnProperty',
+				  'isPrototypeOf',
+				  'propertyIsEnumerable',
+				  'constructor'
+				],
+				dontEnumsLength = dontEnums.length;
+		 
+			return function (obj) {
+			  if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+				throw new TypeError('Object.keys called on non-object');
+			  }
+		 
+			  var result = [], prop, i;
+		 
+			  for (prop in obj) {
+				if (hasOwnProperty.call(obj, prop)) {
+				  result.push(prop);
+				}
+			  }
+		 
+			  if (hasDontEnumBug) {
+				for (i = 0; i < dontEnumsLength; i++) {
+				  if (hasOwnProperty.call(obj, dontEnums[i])) {
+					result.push(dontEnums[i]);
+				  }
+				}
+			  }
+			  return result;
+			};
+		  }());
+		}
+	</script>
+    </body>
+</html>

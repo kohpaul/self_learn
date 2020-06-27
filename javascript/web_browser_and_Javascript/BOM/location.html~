@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="alert" onclick="fnc_prompt()"/>
+	<script>
+		function fnc_alert(){
+			alert(1); // Wait for user response
+			alert(2);
+			alert(3);
+			// use console.log for debugging thesedays
+			
+		}
+
+		function fnc_confirm(){
+			if(confirm('ok?')) // true | false
+				alert('ok');
+			else
+				alert('cancel');
+		}
+
+		function fnc_prompt(){
+			if (prompt('id?') === 'sk')
+				alert('welcome');
+			else
+				alert('fail');
+		}
+
+		// Location obj show current doc's locations's URL
+		// http://google.com:80/blabla/1234?id=5678#bookmark
+		console.log(location.toString(), location.href); // console.log param , show next output immidiately
+		// URL Parsing
+		console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash) // https:, google.com, undefined== 80, pathname, ?id = info , ... 
+		// Changing URL
+		location.href = 'http://egoing.net'; // move current doc to href
+		location = 'http://egoing.net'; // same as above
+
+		location.reload();// reload current doc
+
+	</script>
+    </body>
+</html>

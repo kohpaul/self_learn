@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="alert" onclick="fnc_prompt()"/>
+		<div id="message">Hello world</div>
+	<script>
+		function fnc_alert(){
+			alert(1); // Wait for user response
+			alert(2);
+			alert(3);
+			// use console.log for debugging thesedays
+			
+		}
+
+		function fnc_confirm(){
+			if(confirm('ok?')) // true | false
+				alert('ok');
+			else
+				alert('cancel');
+		}
+
+		function fnc_prompt(){
+			if (prompt('id?') === 'sk')
+				alert('welcome');
+			else
+				alert('fail');
+		}
+	</script>
+    </body>
+</html>

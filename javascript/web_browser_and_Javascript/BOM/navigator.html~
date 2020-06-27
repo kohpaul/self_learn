@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="alert" onclick="fnc_prompt()"/>
+	<script>
+		function fnc_alert(){
+			alert(1); // Wait for user response
+			alert(2);
+			alert(3);
+			// use console.log for debugging thesedays
+			
+		}
+
+		function fnc_confirm(){
+			if(confirm('ok?')) // true | false
+				alert('ok');
+			else
+				alert('cancel');
+		}
+
+		function fnc_prompt(){
+			if (prompt('id?') === 'sk')
+				alert('welcome');
+			else
+				alert('fail');
+		}
+
+		// Location obj show current doc's locations's URL
+		// http://google.com:80/blabla/1234?id=5678#bookmark
+		console.log(location.toString(), location.href); // console.log param , show next output immidiately
+		// URL Parsing
+		console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash) // https:, google.com, undefined== 80, pathname, ?id = info , ... 
+		// Changing URL
+		location.href = 'http://egoing.net'; // move current doc to href
+		location = 'http://egoing.net'; // same as above
+
+		location.reload();// reload current doc
+
+		/* cross browsing: ie, ff, chrome, safari, ..etc 
+			Each browser platform make browser according to spec defined by w3c, ECM 
+			Navigator allow coding for each browser compatibility: provide browser info
+
+		*/
+		console.dir(navigator);
+		console.dir(navigator.appName); // appName: browser name
+		console.dir(navigator.appVersion); // browser version
+		console.dir(navigator.userAgent); // USER-AGENT HTTP header info that browser sends to server
+		console.dir(navigator.platform); // os that browser is on
+
+		// Function test: need for cross browsing issue
+		// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+		if (!Object.keys) { // Object.keys method return key values in array added by ECMAScript5 ( old js is not compatible)
+		  Object.keys = (function () {
+			'use strict';
+			var hasOwnProperty = Object.prototype.hasOwnProperty,
+				hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+				dontEnums = [
+				  'toString',
+				  'toLocaleString',
+				  'valueOf',
+				  'hasOwnProperty',
+				  'isPrototypeOf',
+				  'propertyIsEnumerable',
+				  'constructor'
+				],
+				dontEnumsLength = dontEnums.length;
+		 
+			return function (obj) {
+			  if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+				throw new TypeError('Object.keys called on non-object');
+			  }
+		 
+			  var result = [], prop, i;
+		 
+			  for (prop in obj) {
+				if (hasOwnProperty.call(obj, prop)) {
+				  result.push(prop);
+				}
+			  }
+		 
+			  if (hasDontEnumBug) {
+				for (i = 0; i < dontEnumsLength; i++) {
+				  if (hasOwnProperty.call(obj, dontEnums[i])) {
+					result.push(dontEnums[i]);
+				  }
+				}
+			  }
+			  return result;
+			};
+		  }());
+		}
+	</script>
+    </body>
+</html>
