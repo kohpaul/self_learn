@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li class="active">JavaScript</li>
+</ul>
+<ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+</ol>
+
+<script>
+/* getElementsByTagName */
+    var lis = document.getElementsByTagName('li'); // document object contain all elem : includes ul and ol
+    for(var i=0; i < lis.length; i++){
+        lis[i].style.color='blue';   
+    }
+
+	var ul = document.getElementsByTagName('ul')[0]; 
+	var ul_lis = ul.getElementsByTagName('li'); // document object contain all elem
+    for(var i=0; i < ul_lis.length; i++){
+        ul_lis[i].style.color='red';   
+    }
+
+/* getElementsByClassName */
+	var cls_lis = document.getElementsByClassName('active');
+    for(var i=0; i < cls_lis.length; i++){
+        cls_lis[i].style.color='yellow';   
+    }
+	
+/* getElementById : note there's no s in name : best performance -> use it if possible*/
+	var id_li = document.getElementById('active');
+    id_li.style.color='green';
+
+/* document.querySelector : CSS grammar*/
+	var qs_li = document.querySelector('li');
+    qs_li.style.color='red';
+    var qs_li = document.querySelector('.active');
+    qs_li.style.color='blue';
+/*
+	var qs_lis = document.querySelectorAll('li');
+    for(var name in qs_lis){
+        qs_lis[name].style.color = 'magenta';
+    }
+*/
+</script>
+</body>
+</html>
