@@ -6,14 +6,25 @@
 		<li>css</li>
 		<li>JavaScript</li>
 	</ul>
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script>
 		console.log($('li').length);
 		console.log($('li')[0]);
 		var li = $('li');
+		li.css('text-decoration','underline'); // more than 1 param : setting
+		li.css('text-decoration'); // 1 param : load (if multiple li, load first element)
 		for(var i=0; i<li.length; i++){
 			console.log(li[i]);
+			// console.log(li[i].css('color','red')); // return error since li[i] is DOM obj (not jQueryObj) and .css is method for jqueryObj. 
+			console.log($(li[i]).css('color','cyan'));
 		}
+
+		// map function in jquery get function as paramn
+		li.map(function(index, elem){ 
+			console.log(index, elem);
+			$(elem).css('color', 'red');
+
+		})
 	</script>
 	</body>
 
