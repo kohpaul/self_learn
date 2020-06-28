@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li id="active">JavaScript</li>
+	</ul>
+	<script>
+		// Collection updates in real-time
+		console.group('before');
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			console.log(lis[i]);
+		}
+		console.groupEnd(); // Grouping from console.group('asd') til groupEnd()
+		console.group('after');
+		lis[1].parentNode.removeChild(lis[1]);
+		for(var i = 0; i < lis.length; i++){
+			console.log(lis[i]);
+		}
+		console.groupEnd();
+	</script>
+</body>
+</html>
