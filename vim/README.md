@@ -34,17 +34,18 @@ W
 
 * End of word (moving forward)
 
-> e\E
+> e\
+E
 
 * Start of word (moving backward)
 
-> b
-> B
+> b\
+B
 
 * End of word (moving backward)
 
-> ge
-> gE
+> ge\
+gE
 
 ## Sentencewise movement
 
@@ -136,7 +137,7 @@ W
 
 * Insert beginning of line
 
-> I
+> I    <-(alphabet upper i)
 
 * Append after end of line
 
@@ -194,39 +195,39 @@ W
 
 * Delete (cut) char / line
 
-> d
- dd
+> d\
+dd
 
 * Yank (copy) char / line
 
-> y
- yy
+> y\
+yy
 
 * Change char / line
 
-> c
- cc
+> c\
+cc
 
 * Make upper / lower / swap case
 
-> gU
-gu
+> gU\
+gu\
 ~
 
 * Increment / Decrement number
 
-> ctrl + a
- ctrl + x
+> ctrl + a\
+ctrl + x
 
 * Indent line right / left
 
-> >
- <
+> \>\
+\<
 
 * Indent paragraph right / left
 
-> >}
- <}
+> \>}\
+\<}
 
 * Repeat previous command
 
