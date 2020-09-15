@@ -2,24 +2,15 @@
 
 ## Basic movement
 
-* Left, down, up, right
-
+Left, down, up, right
 > h,j,k,l
-
-* Start of line (indented)
-
-> _
-
-* Start of above line
-
-> -
-
-* Start line of file
-
+Start of line (indented)
+> _   <-- (underline)
+Start of above line
+> \-    <-- (minus)
+Start line of file
 > gg
-
-* Last line of file
-
+Last line of file
 > G
 
 ## Wordwise movement
@@ -29,19 +20,23 @@ _Upper case move until whitespace_
 
 * Start of word (moving forward)
 
-> w, W
+> w
+> W
 
 * End of word (moving forward)
 
-> e, E
+> e
+> E
 
 * Start of word (moving backward)
 
-> b, B
+> b
+> B
 
 * End of word (moving backward)
 
-> ge, gE
+> ge
+> gE
 
 ## Sentencewise movement
 
