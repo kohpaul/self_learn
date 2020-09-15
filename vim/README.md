@@ -24,7 +24,7 @@
 
 ## Wordwise movement
 
-_Lower case move until meta char | white space_
+_Lower case move until meta char | white space_\
 _Upper case move until whitespace_
 
 * Start of word (moving forward)
